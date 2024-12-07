@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contratos de Clientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <section class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Contratos de Clientes</h1>
+            <p class="lead">
+                Todos los contratos activos en la base de datos.
+            </p>
+            <a href="/contratoclientes" class="btn btn-lg btn-secondary">
+                Volver a la pagina de Contrato con los Clientes
+            </a>
+        </div>
+    </section>
+
+    <!-- Tabla de Contratos -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Lista de Contratos de Clientes</h2>
+
+        <!-- Tabla Bonita -->
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID Cliente</th>
+                    <th>ID Holding</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha de Termino</th>
+                    <th>Monto</th>
+                    <th>Cantidad de Propiedades</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each contratosclientes}}
+                    <tr>
+                        <td>{{this.idcliente}}</td>
+                        <td>{{this.idholding}}</td>
+                        <td>{{this.fecha_inicio}}</td>
+                        <td>{{this.fecha_termino}}</td>
+                        <td>{{this.monto}}</td>
+                        <td>{{this.cantidad_propiedades}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
